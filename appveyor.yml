@@ -1,0 +1,22 @@
+branches:
+  only:
+  - master
+
+environment:
+  matrix:
+    - PYTHON: "C:\\Python27-x64"
+    - PYTHON: "C:\\Python35-x64"
+    - PYTHON: "C:\\Python36-x64"
+
+install:
+  - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
+  - python --version
+  - pip --version
+
+  - pip install -U pytest pytest-cov
+
+build_script:
+  - pip install -e .
+
+test_script:
+  - pytest --cov=structmpd
