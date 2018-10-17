@@ -1,5 +1,10 @@
 # pytest-structmpd
 
+[![PyPI](https://img.shields.io/pypi/v/pytest-structmpd.svg)](https://pypi.org/project/pytest-structmpd/)
+[![Build Status](https://travis-ci.org/disktnk/pytest-structmpd.svg?branch=master)](https://travis-ci.org/disktnk/pytest-structmpd)
+[![Build status](https://ci.appveyor.com/api/projects/status/3m16e8awwabdwp9s/branch/master?svg=true)](https://ci.appveyor.com/project/disktnk/pytest-structmpd/branch/master)
+[![codecov](https://codecov.io/gh/disktnk/pytest-structmpd/branch/master/graph/badge.svg)](https://codecov.io/gh/disktnk/pytest-structmpd)
+
 [pytest](https://docs.pytest.org/en/latest/) plugin, provide structured temporary directories, easier to invest errors and failures.
 
 ## Overview
