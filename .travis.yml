@@ -1,0 +1,34 @@
+language: python
+python:
+  - "2.7"
+  - "3.5"
+  - "3.6"
+
+notifications:
+  email: false
+
+sudo: false
+
+before_install:
+  - pip install autopep8 hacking
+  - pip install -U pytest pytest-cov codecov
+
+install:
+  - pip install -e .
+
+script:
+  - flake8 structmpd tests
+  - pytest --cov structmpd
+  - codecov
+
+after_success:
+  - if [[ $TRAVIS_PYTHON_VERSION == '3.6' ]]; then codecov --token=$CODECOV_TOKEN; fi
+
+deploy:
+  - provider: pypi
+    user: $PYPI_MAINTAINER_NAME
+    password: $PYPI_MAINTAINER_PASS
+    on:
+      tags: true
+      python: 3.6
+    allow_failure: false
