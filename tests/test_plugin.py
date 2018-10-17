@@ -15,11 +15,12 @@ def test_plugin_module(testdir):
         script = f.read()
     testdir.makepyfile(script)
 
+    temp_dir = testdir.tmpdir.dirname
     result = testdir.runpytest_subprocess(
-        '--structmpd-root', testdir.tmpdir, '--structmpd-name', 'abcdefg',
+        '--structmpd-root', temp_dir, '--structmpd-name', 'abcdefg',
         '--structmpd-leave')
 
-    temp_path = os.path.join(testdir.tmpdir, 'abcdefg')
+    temp_path = os.path.join(temp_dir, 'abcdefg')
     assert os.path.exists(temp_path)
     shutil.rmtree(temp_path)
 
