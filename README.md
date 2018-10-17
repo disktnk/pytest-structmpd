@@ -107,3 +107,7 @@ $ pytest \
 * `--structmpd-root`: Directory path. On default a directory provided by OS is used, more detail, see [tempfile](https://docs.python.org/3.6/library/tempfile.html)
 * `--structmpd-name`: Top directory name. On default session name like `pytest-module0` is used.
 * `--structmpd-leave`: Not remove temporary directories created by this plugin if set.
+
+## License
+
+MIT License (see [LICENSE](/LICENSE) file).
